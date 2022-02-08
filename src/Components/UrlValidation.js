@@ -1,4 +1,5 @@
 import { Button, Grid, TextField } from '@material-ui/core'
+import { Alert } from '@material-ui/lab'
 
 import { URLValidator } from 'enigma-x-utilities'
 
@@ -24,24 +25,24 @@ function UrlValidation() {
 
   return (
     <Grid item xs={5} style={{ borderRadius: 8, borderRadius: 8, border: '1px solid black' }}>
-      <Grid container alignItems="center" justifyContent="space-evenly">
+      <Grid container alignItems='center' justifyContent='space-evenly'>
         <Grid item xs={11} style={{ marginBottom: '5%' }}>
-          {success == true ? <div>dfs</div> : <div></div>}
+          {success == true ? <Alert severity='success'>{message}</Alert> : success == false && <Alert severity='error'>{message}</Alert>}
           {processedURL && <h3> URL: {processedURL}</h3>}
         </Grid>
         <Grid item xs={5}>
           <TextField
-            id="outlined-basic"
-            label="Enter URL"
-            variant="outlined"
+            id='outlined-basic'
+            label='Enter URL'
+            variant='outlined'
             style={{ width: '150%' }}
             onChange={(e) => {
-              setURL(e.target.value);
+              setURL(e.target.value)
             }}
           />
         </Grid>
         <Grid item xs={5}>
-          <Button style={{ marginLeft: '50%' }} size="large" onClick={(e) => CheckURL(e)}>
+          <Button style={{ marginLeft: '50%' }} size='large' onClick={(e) => CheckURL(e)}>
             Check URL
           </Button>
           <Grid container></Grid>
@@ -49,7 +50,7 @@ function UrlValidation() {
         <Grid item xs={11} style={{ paddingTop: 30 }}></Grid>
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default UrlValidation;
+export default UrlValidation
