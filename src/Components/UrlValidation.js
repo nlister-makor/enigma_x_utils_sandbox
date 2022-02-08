@@ -1,4 +1,4 @@
-import { Button, Grid, TextField } from '@material-ui/core'
+import { Button, Grid, TextField, Typography } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 
 import { URLValidator } from 'enigma-x-utilities'
@@ -24,9 +24,12 @@ function UrlValidation() {
   useEffect(() => {}, [URL])
 
   return (
-    <Grid item xs={5} style={{ borderRadius: 8, borderRadius: 8, border: '1px solid black' }}>
+    <Grid item xs={3} style={{ borderRadius: 8, borderRadius: 8, border: '1px solid black' }}>
       <Grid container alignItems='center' justifyContent='space-evenly'>
-        <Grid item xs={11} style={{ marginBottom: '5%' }}>
+        <Grid item xs={12}>
+          <Typography style={{textAlign: 'center', fontSize : 18}}>URL Validator</Typography>
+        </Grid>
+        <Grid item xs={8} style={{ paddingBlock: '5%' }}>
           {success == true ? <Alert severity='success'>{message}</Alert> : success == false && <Alert severity='error'>{message}</Alert>}
           {processedURL && <h3> URL: {processedURL}</h3>}
         </Grid>
