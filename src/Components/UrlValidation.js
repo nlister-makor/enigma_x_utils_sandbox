@@ -24,7 +24,7 @@ function UrlValidation() {
   useEffect(() => {}, [URL])
 
   return (
-    <Grid item xs={3} style={{ borderRadius: 8, borderRadius: 8, border: '1px solid black' }}>
+    <Grid item xs={12} lg={3} style={{ borderRadius: 8, borderRadius: 8, border: '1px solid black' }}>
       <Grid container alignItems='center' justifyContent='space-evenly'>
         <Grid item xs={12}>
           <Typography style={{textAlign: 'center', fontSize : 18}}>URL Validator</Typography>
