@@ -29,7 +29,7 @@ function UrlValidation() {
         <Grid item xs={12}>
           <Typography style={{textAlign: 'center', fontSize : 18}}>URL Validator</Typography>
         </Grid>
-        <Grid item xs={8} style={{ paddingBlock: '5%' }}>
+        <Grid item xs={8} style={{height: 60}}>
           {success == true ? <Alert severity='success'>{message}</Alert> : success == false && <Alert severity='error'>{message}</Alert>}
           {processedURL && <h3> URL: {processedURL}</h3>}
         </Grid>
