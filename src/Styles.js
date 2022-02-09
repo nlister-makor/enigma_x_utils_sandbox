@@ -12,6 +12,18 @@ export const useStyles = makeStyles({
     height: "12px",
     marginBottom: "10px",
   },
+  chipContainer:{
+    marginTop: "10px",
+    marginLeft: 5,
+  },
+  chipItem: {
+    marginBottom: "5px",
+    marginRight: "3px",
+        },
+    chip: {
+    backgroundColor: "#EDEFF3",
+    border: "none"
+        },
 });
 
 
