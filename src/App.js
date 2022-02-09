@@ -53,7 +53,7 @@ function App() {
                     <MenuItem onClick={(e) => hendleRoute(e , "")}>Password Validation</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "urlValidation")}>URL Validation</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "phonevalidation")}>Phone Validation</MenuItem>
-                    <MenuItem onClick={(e)=> hendleRoute (e,"ipValidation")}>IP Validator</MenuItem>
+                    <MenuItem onClick={(e)=> hendleRoute (e,"ipValidation")}>Ip Validator</MenuItem>
                     <MenuItem onClick= {(e)=> hendleRoute(e,"SpecialCharModifier")}>Special char modifier</MenuItem>
                   </MenuList>
                 </div>
