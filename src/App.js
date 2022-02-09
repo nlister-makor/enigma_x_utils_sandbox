@@ -18,6 +18,7 @@ import { useStyles } from "./Styles";
 import { Switch, Route } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import IpValidation from "./Components/IpValidation";
+import Tags from "./Components/Tags";
 import SpecialCharModify from "./Components/SpecialCharModify";
 function App() {
   const classes = useStyles();
@@ -51,6 +52,7 @@ function App() {
                 <div className={classes.paper}>
                   <MenuList id="simple-menu">
                     <MenuItem onClick={(e) => hendleRoute(e , "")}>Password Validation</MenuItem>
+                    <MenuItem onClick= {(e)=> hendleRoute(e,"tags")}>Tags Creator</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "urlValidation")}>URL Validation</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "phonevalidation")}>Phone Validation</MenuItem>
                     <MenuItem onClick={(e)=> hendleRoute (e,"ipValidation")}>IP Validator</MenuItem>
@@ -67,6 +69,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Password} />
           <Route path="/urlValidation" component={UrlValidation} />
+          <Route path="/tags" component={Tags} />
           <Route path="/phonevalidation" component={PhoneValidation} />
           <Route path="/ipValidation" component={IpValidation}/>
           <Route path ="/SpecialCharModifier" component={SpecialCharModify}/>

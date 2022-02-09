@@ -20,7 +20,19 @@ export const useStyles = makeStyles({
     backgroundColor: "#FFFFFF",
     borderRadius: "8px",
     border : '1px solid #000'
-  }
+  },
+  chipContainer:{
+    marginTop: "10px",
+    marginLeft: 5,
+  },
+  chipItem: {
+    marginBottom: "5px",
+    marginRight: "3px",
+        },
+    chip: {
+    backgroundColor: "#EDEFF3",
+    border: "none"
+        },
 });
 
 
