@@ -20,9 +20,9 @@ function Password() {
   useEffect(() => {}, [validState]);
 
   return (
-    <Grid item xs={12} lg={3} style={{ borderRadius: 8, border: '2px solid #2980b9' }}>
+    <Grid item xs={12} lg={3} style={{ borderRadius: 8, border: '2px solid #2980b9', marginTop: 10 }}>
       <Grid container alignItems="center" justifyContent="space-evenly" style={{ paddingBlock: 10 }}>
-      <Grid item xs={2} className={classes.blueShape}/>
+        <Grid item xs={2} className={classes.blueShape} />
 
         <Grid item xs={12}>
           <Typography style={{ textAlign: 'center', fontSize: 18 }}>Password validation</Typography>
