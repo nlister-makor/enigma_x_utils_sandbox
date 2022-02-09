@@ -17,6 +17,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { useStyles } from "./Styles";
 import { Switch, Route } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import IpValidation from "./Components/IpValidation";
+import SpecialCharModify from "./Components/SpecialCharModify";
 function App() {
   const classes = useStyles();
   const history = useHistory();
@@ -37,7 +39,7 @@ function App() {
     <div>
       <Grid container style={{ display: "flex" }} direction="column">
         <Grid item xs={12}>
-          <AppBar position="static">
+          <AppBar  position="static">
             <Toolbar variant="dense">
               <IconButton>
                 <MenuIcon
@@ -45,12 +47,14 @@ function App() {
                   onClick={handleClick}
                 />
               </IconButton>
-              <Popper id={id} open={open} anchorEl={anchorEl}>
+              <Popper style={{zIndex:200}} id={id} open={open} anchorEl={anchorEl}>
                 <div className={classes.paper}>
                   <MenuList id="simple-menu">
                     <MenuItem onClick={(e) => hendleRoute(e , "")}>Password Validation</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "urlValidation")}>URL Validation</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "phonevalidation")}>Phone Validation</MenuItem>
+                    <MenuItem onClick={(e)=> hendleRoute (e,"ipValidation")}>Ip Validation</MenuItem>
+                    <MenuItem onClick= {(e)=> hendleRoute(e,"SpecialCharModifier")}>Special char modifier</MenuItem>
                   </MenuList>
                 </div>
               </Popper>
@@ -64,6 +68,8 @@ function App() {
           <Route exact path="/" component={Password} />
           <Route path="/urlValidation" component={UrlValidation} />
           <Route path="/phonevalidation" component={PhoneValidation} />
+          <Route path="/ipValidation" component={IpValidation}/>
+          <Route path ="/SpecialCharModifier" component={SpecialCharModify}/>
         </Switch>
       </Grid>
     </div>
