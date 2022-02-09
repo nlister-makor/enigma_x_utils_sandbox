@@ -12,6 +12,15 @@ export const useStyles = makeStyles({
     height: "12px",
     marginBottom: "10px",
   },
+  menuButton: {
+    marginRight: "12px",
+    color : "#FFFFFF",
+  },
+  paper:{
+    backgroundColor: "#FFFFFF",
+    borderRadius: "8px",
+    border : '1px solid #000'
+  }
 });
 
 
