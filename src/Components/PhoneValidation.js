@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Grid, TextField, Typography } from "@material-ui/core";
+import { Grid, TextField, Typography } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { StyledButton, useStyles } from "../Styles";
-import { phoneNumberFormatter } from "enigma-x-utilities";
+import { phoneNumberFormatter, setConfig }from "enigma-x-utilities";
 
 import { useEffect, useState } from "react";
 
@@ -68,9 +68,8 @@ function PhoneValidation() {
           </StyledButton>
           <Grid container></Grid>
         </Grid>
-        <Grid item xs={11} style={{ height: 60 , textAlign: "center" }}>
-        {formattedPhone && <h3> Phone: {formattedPhone}</h3>}
-
+        <Grid item xs={11} style={{ height: 60, textAlign: "center" }}>
+          {formattedPhone && <h3> Phone: {formattedPhone}</h3>}
         </Grid>
       </Grid>
     </Grid>

@@ -1,7 +1,5 @@
-import { Grid, InputBase, TextField, Typography } from '@material-ui/core';
-import { passwordValidation } from 'enigma-x-utilities';
-import { setConfig } from 'enigma-x-utilities';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import { Grid, TextField, Typography } from '@material-ui/core';
+import { passwordValidation , setConfig } from 'enigma-x-utilities'
 import DoneIcon from '@material-ui/icons/Done';
 import CloseIcon from '@material-ui/icons/Close';
 import { useEffect, useState } from 'react';
