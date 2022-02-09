@@ -44,7 +44,7 @@ function PhoneValidation() {
             Phone Validator
           </Typography>
         </Grid>
-        <Grid item xs={8} style={{ paddingBlock: "5%" }}>
+        <Grid item xs={8} style={{ height: 60 }}>
           {success == true ? (
             <Alert severity="success">{message}</Alert>
           ) : (
