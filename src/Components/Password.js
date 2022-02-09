@@ -5,10 +5,12 @@ import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import DoneIcon from '@material-ui/icons/Done';
 import CloseIcon from '@material-ui/icons/Close';
 import { useEffect, useState } from 'react';
+import { useStyles } from '../Styles';
 
 const headers = ['Char. length', 'Upper Case', 'Lower Case' ,'Number' , 'NonAlphaNumeric'];
 
 function Password() { 
+  const classes = useStyles()
   const [validState, setValidState] = useState({validation : [{},{},{},{},{}] , });
   const [pwd, setPwd] = useState('');
 
@@ -20,8 +22,10 @@ function Password() {
   useEffect(() => {}, [validState]);
 
   return (
-    <Grid item xs={12} lg={3} style={{ borderRadius: 8, border: '1px solid black' }}>
+    <Grid item xs={12} lg={3} style={{ borderRadius: 8, border: '2px solid #2980b9' }}>
       <Grid container alignItems="center" justifyContent="space-evenly" style={{ paddingBlock: 10 }}>
+      <Grid item xs={2} className={classes.blueShape}/>
+
         <Grid item xs={12}>
           <Typography style={{ textAlign: 'center', fontSize: 18 }}>Password validation</Typography>
         </Grid>
