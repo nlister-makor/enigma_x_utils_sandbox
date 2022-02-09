@@ -43,5 +43,8 @@ export const StyledButton = withStyles(() => ({
         fontSize: "12px",
         backgroundColor: "#1C67FF",
         color: "#ffffff",
-    }
+        '&:hover': {
+          backgroundColor: '#1c67ffb3',
+        },
+      }
 }))(Button)

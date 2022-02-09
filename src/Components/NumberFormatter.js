@@ -2,6 +2,7 @@ import {
   FormControl,
   Grid,
   InputLabel,
+  MenuItem,
   Select,
   TextField,
   Typography,
@@ -11,14 +12,14 @@ import { setConfig, numberFormatter } from "enigma-x-utilities";
 import { StyledButton, useStyles } from "../Styles";
 function NumberFormatter() {
   const classes = useStyles();
-  const [overall, setOverall] = useState(null);
-  const [decimal, setDecimal] = useState(null);
-  const [number, setNumber] = useState(null);
-  const [fNumber, setFnumber] = useState(null);
+  const [overall, setOverall] = useState("");
+  const [decimal, setDecimal] = useState("");
+  const [number, setNumber] = useState("");
+  const [fNumber, setFnumber] = useState("");
   const [useColors, setUseColors] = useState(false);
   const [color, setColor] = useState(null);
-  const [positive, setPositive] = useState("#111111");
-  const [negative, setNegative] = useState("#111111");
+  const [positive, setPositive] = useState("blue");
+  const [negative, setNegative] = useState("red");
 
   const handleChange = (ev) => {
     const name = ev.target.name;
@@ -98,94 +99,100 @@ function NumberFormatter() {
           </Typography>
         </Grid>
         <Grid item xs={5}>
-            <Grid container>
-            <form onSubmit={handleFormat}>
-          <Grid item xs={5}>
-            <TextField
-              label="number"
-              variant="outlined"
-              onChange={handleChange}
-              id="number"
-              name="number"
-            />
-          </Grid>
+          <Grid container justifyContent="center">
+            <Grid item xs={12} style={{ paddingTop: 10 }}>
+              <TextField
+                label="number"
+                variant="outlined"
+                onChange={handleChange}
+                id="number"
+                name="number"
+              />
+            </Grid>
 
-          <Grid item>
-            <TextField
-              onChange={handleChange}
-              id="overall"
-              label="Overall digits limit"
-              name="overall"
-              type="text"
-              variant="outlined"
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              onChange={handleChange}
-              id="decimal"
-              label="Decimal digits limit"
-              name="decimal"
-              type="text"
-              variant="outlined"
-            />
-          </Grid>
-          <Grid item>
-            <FormControl variant="outlined">
+            <Grid item xs={12} style={{ paddingTop: 10 }}>
+              <TextField
+                onChange={handleChange}
+                id="overall"
+                label="Overall digits limit"
+                name="overall"
+                type="text"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid item xs={12} style={{ paddingTop: 10 }}>
+              <TextField
+                onChange={handleChange}
+                id="decimal"
+                label="Decimal digits limit"
+                name="decimal"
+                type="text"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid item xs={12} style={{ paddingBlock: 10 }}>
               <Select
                 native
+                variant="outlined"
                 value={useColors}
                 onChange={handleChange}
                 name="colors"
-                inputProps={{
-                  name: "colors",
-                  id: "colors",
-                }}
+                id="colors"
               >
-                <InputLabel htmlFor="outlined-age-native-simple">
-                  Use colors?
-                </InputLabel>
-                <option aria-label="None" value="" />
                 <option value={true}>Yes</option>
                 <option value={false}>No</option>
               </Select>
-            </FormControl>
-          </Grid>
+            </Grid>
 
-          {useColors ? (
-            <Grid item>
-              <Typography>Positive Negative</Typography>
-              <TextField
-                variant="outlined"
-                type="color"
-                onChange={handleChange}
-                name="positive"
-                value={positive}
-              />
-              <TextField
-                variant="outlined"
-                type="color"
-                onChange={handleChange}
-                name="negative"
-                value={negative}
-              />
+            {useColors ? (
+              <Grid item xs={12} style={{ paddingBottom: 10}}>
+                <Grid container justifyContent="space-between">
+                  <Grid item>
+                    <Typography>Positive</Typography>
+                    <TextField
+                      style={{ width: 60 }}
+                      variant="outlined"
+                      type="color"
+                      onChange={handleChange}
+                      name="positive"
+                      value={positive}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <Typography>Negative</Typography>
+                    <TextField
+                      style={{ width: 60 }}
+                      variant="outlined"
+                      type="color"
+                      onChange={handleChange}
+                      name="negative"
+                      value={negative}
+                    />
+                  </Grid>
+                </Grid>
+              </Grid>
+            ) : (
+              ""
+            )}
+            <Grid item xs={12} style={{paddingBlock: 10 }}>
+              <StyledButton style={{ margin: 0 }} onClick={handleFormat}>
+                Format
+              </StyledButton>
             </Grid>
-          ) : (
-            ""
-          )}
-          <Grid item>
-            <StyledButton>Format</StyledButton>
+            <Grid item xs={12}>
+              <Grid container>
+                <Grid item xs={6}>
+                  <Typography>Result:</Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography style={{ color }}>
+                    {fNumber ? fNumber : ""}
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
-        </form>
-        <Grid item className="result">
-          <Typography>
-            {" "}
-            Result: <span style={{ color }}>{fNumber ? fNumber : ""}</span>
-          </Typography>
         </Grid>
-            </Grid>
-        </Grid>
-        
       </Grid>
     </Grid>
   );
