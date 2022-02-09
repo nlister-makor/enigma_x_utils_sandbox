@@ -20,6 +20,7 @@ import { useHistory } from "react-router-dom";
 import IpValidation from "./Components/IpValidation";
 import Tags from "./Components/Tags";
 import SpecialCharModify from "./Components/SpecialCharModify";
+import NumberFormatter from "./Components/NumberFormatter";
 function App() {
   const classes = useStyles();
   const history = useHistory();
@@ -56,7 +57,8 @@ function App() {
                     <MenuItem onClick={(e) => hendleRoute(e , "urlValidation")}>URL Validation</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "phonevalidation")}>Phone Validation</MenuItem>
                     <MenuItem onClick={(e)=> hendleRoute (e,"ipValidation")}>IP Validator</MenuItem>
-                    <MenuItem onClick= {(e)=> hendleRoute(e,"SpecialCharModifier")}>Special char modifier</MenuItem>
+                    <MenuItem onClick= {(e)=> hendleRoute(e,"specialCharModifier")}>Special char modifier</MenuItem>
+                    <MenuItem onClick= {(e)=> hendleRoute(e,"number_formatter")}>Number Formatter</MenuItem>
                   </MenuList>
                 </div>
               </Popper>
@@ -72,7 +74,8 @@ function App() {
           <Route path="/tags" component={Tags} />
           <Route path="/phonevalidation" component={PhoneValidation} />
           <Route path="/ipValidation" component={IpValidation}/>
-          <Route path ="/SpecialCharModifier" component={SpecialCharModify}/>
+          <Route path ="/specialCharModifier" component={SpecialCharModify}/>
+          <Route path ="/number_formatter" component={NumberFormatter}/>
         </Switch>
       </Grid>
     </div>
