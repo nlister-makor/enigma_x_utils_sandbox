@@ -37,7 +37,7 @@ function Password() {
                 {validState &&
                   validState.validation.map((item, idx) => {
                     return (
-                      <Grid item xs={12}>
+                      <Grid item xs={12} key={idx}>
                         <Grid container>
                           <Grid item>{item.valid ? <DoneIcon style={{ color: '#1C67FF' }} /> : <CloseIcon style={{ color: '#FF3939' }} />}</Grid>
                           <Grid item>
