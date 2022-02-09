@@ -128,6 +128,9 @@ function NumberFormatter() {
               />
             </Grid>
             <Grid item xs={12} style={{ paddingBlock: 10 }}>
+              <Typography  style={{fontSize:12}}>
+                Use Colors?
+              </Typography>
               <Select
                 native
                 variant="outlined"
