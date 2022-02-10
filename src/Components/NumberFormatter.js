@@ -86,7 +86,7 @@ function NumberFormatter() {
         <Grid item xs={10}>
           <Grid container justifyContent="center" alignItems="center" >
             <Grid item xs={12} style={{ paddingTop: 10 }}>
-              <TextField style={{ width: '100%' }} label="number" variant="outlined" onChange={handleChange} id="number" name="number" />
+              <TextField style={{ width: '100%' }} label="Number" variant="outlined" onChange={handleChange} id="number" name="number" />
             </Grid>
 
             <Grid item xs={12} style={{ paddingTop: 10 }}>

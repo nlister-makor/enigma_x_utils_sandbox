@@ -43,6 +43,9 @@ function App() {
         <Grid item xs={12}>
           <AppBar  position="static">
             <Toolbar variant="dense">
+              <Typography variant="h6" color="inherit">
+                Select utility
+              </Typography>
               <IconButton>
                 <MenuIcon
                   className={classes.menuButton}
@@ -62,9 +65,6 @@ function App() {
                   </MenuList>
                 </div>
               </Popper>
-              <Typography variant="h6" color="inherit">
-                Select utility
-              </Typography>
             </Toolbar>
           </AppBar>
         </Grid>
