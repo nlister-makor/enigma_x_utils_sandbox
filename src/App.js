@@ -33,7 +33,7 @@ function App() {
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
 
-  const hendleRoute = ( e , routeName ) => {
+  const handleRoute = ( e , routeName ) => {
     history.push(`/${routeName}`);
     setAnchorEl(anchorEl ? null : e.currentTarget);
 
@@ -57,14 +57,14 @@ function App() {
               <Popper style={{zIndex:200}} id={id} open={open} anchorEl={anchorEl}>
                 <div className={classes.paper}>
                   <MenuList id="simple-menu">
-                    <MenuItem onClick={(e) => hendleRoute(e , "")}>Password Validation</MenuItem>
-                    <MenuItem onClick= {(e)=> hendleRoute(e,"tags")}>Tags Separator</MenuItem>
-                    <MenuItem onClick={(e) => hendleRoute(e , "urlValidation")}>URL Validation</MenuItem>
-                    <MenuItem onClick={(e) => hendleRoute(e , "phonevalidation")}>Phone Validation</MenuItem>
-                    <MenuItem onClick={(e)=> hendleRoute (e,"ipValidation")}>IP Validator</MenuItem>
-                    <MenuItem onClick= {(e)=> hendleRoute(e,"specialCharModifier")}>Special char modifier</MenuItem>
-                    <MenuItem onClick= {(e)=> hendleRoute(e,"number_formatter")}>Number Formatter</MenuItem>
-                    <MenuItem onClick= {(e)=> hendleRoute(e,"space_remover")}>Space Remover</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e , "")}>Password Validation</MenuItem>
+                    <MenuItem onClick= {(e)=> handleRoute(e,"tags")}>Tags Separator</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e , "urlValidation")}>URL Validation</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e , "phonevalidation")}>Phone Validation</MenuItem>
+                    <MenuItem onClick={(e)=> handleRoute (e,"ipValidation")}>IP Validator</MenuItem>
+                    <MenuItem onClick= {(e)=> handleRoute(e,"specialCharModifier")}>Special char modifier</MenuItem>
+                    <MenuItem onClick= {(e)=> handleRoute(e,"number_formatter")}>Number Formatter</MenuItem>
+                    <MenuItem onClick= {(e)=> handleRoute(e,"space_remover")}>Space Remover</MenuItem>
                   </MenuList>
                 </div>
               </Popper>

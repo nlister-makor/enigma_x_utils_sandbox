@@ -20,11 +20,14 @@ function SpaceRemover() {
     }
 
     const handleClick = () => {
-        
-       let outputText = removeSpaces  (text).data
+
+       let outputText = removeSpaces(text).data
+       console.log("outputText", outputText)
        setEditedText(outputText);
        console.log("calling the func", removeSpaces  (text));
        setText("");
+       setMessage('')
+       setSuccess()
     }
   
     return (
