@@ -21,6 +21,8 @@ import IpValidation from "./Components/IpValidation";
 import Tags from "./Components/Tags";
 import SpecialCharModify from "./Components/SpecialCharModify";
 import NumberFormatter from "./Components/NumberFormatter";
+import SpaceRemover from "./Components/SpaceRemover";
+
 function App() {
   const classes = useStyles();
   const history = useHistory();
@@ -53,12 +55,13 @@ function App() {
                 <div className={classes.paper}>
                   <MenuList id="simple-menu">
                     <MenuItem onClick={(e) => hendleRoute(e , "")}>Password Validation</MenuItem>
-                    <MenuItem onClick= {(e)=> hendleRoute(e,"tags")}>Tags Creator</MenuItem>
+                    <MenuItem onClick= {(e)=> hendleRoute(e,"tags")}>Tags Separator</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "urlValidation")}>URL Validation</MenuItem>
                     <MenuItem onClick={(e) => hendleRoute(e , "phonevalidation")}>Phone Validation</MenuItem>
                     <MenuItem onClick={(e)=> hendleRoute (e,"ipValidation")}>IP Validator</MenuItem>
                     <MenuItem onClick= {(e)=> hendleRoute(e,"specialCharModifier")}>Special char modifier</MenuItem>
                     <MenuItem onClick= {(e)=> hendleRoute(e,"number_formatter")}>Number Formatter</MenuItem>
+                    <MenuItem onClick= {(e)=> hendleRoute(e,"space_remover")}>Space Remover</MenuItem>
                   </MenuList>
                 </div>
               </Popper>
@@ -76,6 +79,7 @@ function App() {
           <Route path="/ipValidation" component={IpValidation}/>
           <Route path ="/specialCharModifier" component={SpecialCharModify}/>
           <Route path ="/number_formatter" component={NumberFormatter}/>
+          <Route path ="/space_remover" component={SpaceRemover}/>
         </Switch>
       </Grid>
     </div>

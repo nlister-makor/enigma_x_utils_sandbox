@@ -28,6 +28,8 @@ const handleClick = () => {
        setTags(textTags)
        console.log("calling the func", tagsSeparator(text))
        setText("")
+       setMessage("");
+       setSuccess();
 }
 
 
