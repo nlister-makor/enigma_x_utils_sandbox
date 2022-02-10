@@ -22,6 +22,7 @@ import Tags from "./Components/Tags";
 import SpecialCharModify from "./Components/SpecialCharModify";
 import NumberFormatter from "./Components/NumberFormatter";
 import SpaceRemover from "./Components/SpaceRemover";
+import EmailDomainValidation from "./Components/EmailDomainValidation";
 
 function App() {
   const classes = useStyles();
@@ -41,30 +42,28 @@ function App() {
 
   return (
     <div>
-      <Grid container style={{ display: "flex" }} direction="column">
+      <Grid container style={{ display: 'flex' }} direction="column">
         <Grid item xs={12}>
-          <AppBar  position="static">
+          <AppBar position="static">
             <Toolbar variant="dense">
               <Typography variant="h6" color="inherit">
                 Select utility
               </Typography>
               <IconButton>
-                <MenuIcon
-                  className={classes.menuButton}
-                  onClick={handleClick}
-                />
+                <MenuIcon className={classes.menuButton} onClick={handleClick} />
               </IconButton>
-              <Popper style={{zIndex:200}} id={id} open={open} anchorEl={anchorEl}>
+              <Popper style={{ zIndex: 200 }} id={id} open={open} anchorEl={anchorEl}>
                 <div className={classes.paper}>
                   <MenuList id="simple-menu">
-                    <MenuItem onClick={(e) => handleRoute(e , "")}>Password Validation</MenuItem>
-                    <MenuItem onClick= {(e)=> handleRoute(e,"tags")}>Tags Separator</MenuItem>
-                    <MenuItem onClick={(e) => handleRoute(e , "urlValidation")}>URL Validation</MenuItem>
-                    <MenuItem onClick={(e) => handleRoute(e , "phonevalidation")}>Phone Validation</MenuItem>
-                    <MenuItem onClick={(e)=> handleRoute (e,"ipValidation")}>IP Validator</MenuItem>
-                    <MenuItem onClick= {(e)=> handleRoute(e,"specialCharModifier")}>Special char modifier</MenuItem>
-                    <MenuItem onClick= {(e)=> handleRoute(e,"number_formatter")}>Number Formatter</MenuItem>
-                    <MenuItem onClick= {(e)=> handleRoute(e,"space_remover")}>Space Remover</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, '')}>Password Validation</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, 'tags')}>Tags Separator</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, 'url_validation')}>URL Validation</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, 'phone_validation')}>Phone Validation</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, 'ip_validation')}>IP Validator</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, 'special_char_modifier')}>Special char modifier</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, 'number_formatter')}>Number Formatter</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, 'space_remover')}>Space Remover</MenuItem>
+                    <MenuItem onClick={(e) => handleRoute(e, 'email_validator')}>Email domain validator</MenuItem>
                   </MenuList>
                 </div>
               </Popper>
@@ -73,13 +72,14 @@ function App() {
         </Grid>
         <Switch>
           <Route exact path="/" component={Password} />
-          <Route path="/urlValidation" component={UrlValidation} />
+          <Route path="/url_validation" component={UrlValidation} />
           <Route path="/tags" component={Tags} />
-          <Route path="/phonevalidation" component={PhoneValidation} />
-          <Route path="/ipValidation" component={IpValidation}/>
-          <Route path ="/specialCharModifier" component={SpecialCharModify}/>
-          <Route path ="/number_formatter" component={NumberFormatter}/>
-          <Route path ="/space_remover" component={SpaceRemover}/>
+          <Route path="/phone_validation" component={PhoneValidation} />
+          <Route path="/ip_validation" component={IpValidation} />
+          <Route path="/special_char_modifier" component={SpecialCharModify} />
+          <Route path="/number_formatter" component={NumberFormatter} />
+          <Route path="/space_remover" component={SpaceRemover} />
+          <Route path="/email_validator" component={EmailDomainValidation} />
         </Switch>
       </Grid>
     </div>
